@@ -1,16 +1,32 @@
 public class Main {
+
+    // Метод возвращает результат сравнения книг по названию и автору.
+    public static void comparingBooks(Book book0, Book book) {
+        if (book0.equals(book)) {
+            System.out.printf("%s и %s - Это одна и та же книга %n", book0, book);
+        } else {
+            System.out.printf("%s и %s - Это разные книги %n", book0, book);
+        }
+    }
+
     public static void main(String[] args) {
         Author author1 = new Author("Борис", "Пастернак");
         Author author2 = new Author("Фёдор", "Достоевский");
         Book book1 = new Book("Доктор Живаго", author1, 1957);
         Book book2 = new Book("Братья Карамазовы", author2, 1880);
-        System.out.println("Первая книга: " + book1.getBookTittle() + ". Автор - " + book1.getAuthorName() +
-                ", дата публикации " + book1.getYearOfPublication() + " год");
-        System.out.println("Вторая книга: " + book2.getBookTittle() + ". Автор - " + book2.getAuthorName() +
-                ", дата публикации " + book2.getYearOfPublication() + " год");
+
+        System.out.println(book1);
+        System.out.println(book2);
 
         book2.setYearOfPublication(1881);
-        System.out.println("Вторая книга: " + book2.getBookTittle() + ". Автор - " + book2.getAuthorName() +
-                ", дата публикации, указанная на обложке книги - " + book2.getYearOfPublication() + " год");
+
+        System.out.println(book2 + " - Второе издание");
+
+        Book book3 = new Book("Доктор Живаго", author1, 1999);
+        System.out.println(book3 + " - Новое издание");
+        System.out.println();
+
+        comparingBooks(book1,book2);
+        comparingBooks(book1, book3);
     }
 }
