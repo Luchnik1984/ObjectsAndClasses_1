@@ -22,11 +22,11 @@ public class Main {
 
         System.out.println(book2 + " - Второе издание");
 
-        Book book3 = new Book("Доктор Живаго", author1, 1999);
-        System.out.println(book3 + " - Новое издание");
+        Book book3 = new Book("Доктор Живаго", author1, 1957);
+        System.out.println(book3 + " - переиздание");
         System.out.println();
 
-        comparingBooks(book1,book2);
+        comparingBooks(book1, book2);
         comparingBooks(book1, book3);
     }
 }
